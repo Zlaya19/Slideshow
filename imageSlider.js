@@ -1,12 +1,15 @@
 const display = document.getElementById('output');
 const btnTop = document.getElementById('btnLast');
 const btnBottom = document.getElementById('btnNext');
-const body = document.querySelector('body');
 
+//  The list of images i use and save locally
 const image = ['code1','code2','code3','code4','code5','code6','code7'];
 
+//  The unique index i use to define the exact image
 let imageIndex = 0;
 
+
+//  The loadImage function starts by loading the page and provides us with an image
 window.addEventListener('load', loadImage(image[imageIndex]));
 
 
@@ -15,7 +18,7 @@ function loadImage(image){
     display.style.transition = '2s';
 }
 
-
+//  Top and bottom buttons are connect with functions
 btnTop.addEventListener('click', previmage);
 btnBottom.addEventListener('click', nextimage);
 
@@ -29,7 +32,6 @@ function previmage() {
     }
   
     loadImage(image[imageIndex]);
-
   }
   
   // Next image
@@ -41,5 +43,4 @@ function previmage() {
     }
   
     loadImage(image[imageIndex]);
-
   }
